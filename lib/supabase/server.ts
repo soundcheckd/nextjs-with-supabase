@@ -1,29 +1,40 @@
-import { createServerClient } from "@supabase/ssr"
-import { cookies } from "next/headers"
+import { createServerClient } from '@supabase/ssr'
+import { type CookieOptions } from '@supabase/ssr'
+import { cookies } from 'next/headers'
 
 export function createClient() {
-  const cookieStore = cookies()
-
   return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
         get(name: string) {
-          return cookieStore.get(name)?.value
+          return (cookies() as any).get(name)?.value ?? ''
         },
-        set(name: string, value: string, options: any) {
+        set(name: string, value: string, options: CookieOptions) {
           try {
-            cookieStore.set({ name, value, ...options })
+            (cookies() as any).set({
+              name,
+              value,
+              ...options,
+              sameSite: 'lax',
+              secure: process.env.NODE_ENV === 'production',
+            })
           } catch (error) {
-            // Handle cookie errors
+            // Handle cookie error in development
+            if (process.env.NODE_ENV !== 'production') {
+              console.warn('Error setting cookie:', error)
+            }
           }
         },
-        remove(name: string, options: any) {
+        remove(name: string, options: CookieOptions) {
           try {
-            cookieStore.set({ name, value: "", ...options })
+            (cookies() as any).delete(name)
           } catch (error) {
-            // Handle cookie errors
+            // Handle cookie error in development
+            if (process.env.NODE_ENV !== 'production') {
+              console.warn('Error removing cookie:', error)
+            }
           }
         },
       },
