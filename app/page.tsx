@@ -1,53 +1,22 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { createClient } from "@/lib/supabase/server";
 import { Apple } from "lucide-react";
 
-export default async function Home() {
-  const supabase = createClient();
-  const { data: { session } } = await supabase.auth.getSession();
-
+export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center">
-          <div className="mr-4 flex">
-            <Link href="/" className="mr-6 flex items-center space-x-2">
-              <span className="font-bold text-primary">SoundCheckd</span>
-            </Link>
-            <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link href="/concerts" className="transition-colors hover:text-primary">
-                Concerts
-              </Link>
-              <Link href="/reviews" className="transition-colors hover:text-primary">
-                Reviews
-              </Link>
-              <Link href="/artists" className="transition-colors hover:text-primary">
-                Artists
-              </Link>
-            </nav>
-          </div>
-          <div className="flex flex-1 items-center justify-end space-x-4">
-            {session ? (
-              <Link href="/profile">
-                <Button variant="ghost">Profile</Button>
-              </Link>
-            ) : (
-              <>
-                <Link href="/login">
-                  <Button variant="ghost">Login</Button>
-                </Link>
-                <Link href="/signup">
-                  <Button>Sign Up</Button>
-                </Link>
-              </>
-            )}
-          </div>
+        <div className="container flex h-14 items-center justify-between">
+          <Link href="/" className="flex items-center space-x-2">
+            <span className="font-bold text-2xl bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
+              SoundCheckd
+            </span>
+          </Link>
         </div>
       </header>
       <main className="flex-1">
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-blue-500/20 to-primary/20" />
           <div className="container relative py-24 md:py-32">
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
               <div className="flex flex-col justify-center">
@@ -56,26 +25,25 @@ export default async function Home() {
                   <span className="text-primary">Elevated</span>
                 </h1>
                 <p className="mt-6 text-lg text-muted-foreground">
-                  Track concerts, share reviews, and connect with fellow music lovers. Download the SoundCheckd app to take your concert experience to the next level.
+                  Track concerts, share reviews, and connect with fellow music lovers. 
+                  Download the SoundCheckd app to take your concert experience to the next level.
                 </p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                   <a
-                    href="https://apps.apple.com/app/soundcheckd/id123456789"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#"
                     className="inline-flex items-center justify-center rounded-lg bg-black px-6 py-3 text-white hover:bg-black/90"
                   >
                     <Apple className="mr-2 h-5 w-5" />
-                    Download on the App Store
+                    Coming Soon to App Store
                   </a>
                 </div>
               </div>
-              <div className="relative">
-                <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 p-8">
-                  <div className="h-full w-full rounded-xl bg-white/10 backdrop-blur-sm">
-                    {/* Placeholder for app screenshot */}
-                    <div className="flex h-full items-center justify-center text-muted-foreground">
-                      App Preview
+              <div className="relative hidden lg:block">
+                <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-blue-500/20 p-8">
+                  <div className="h-full w-full rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                    <div className="text-center">
+                      <span className="text-4xl">📱</span>
+                      <p className="mt-4 text-muted-foreground">App Preview Coming Soon</p>
                     </div>
                   </div>
                 </div>
@@ -85,14 +53,14 @@ export default async function Home() {
         </section>
         <section className="container py-24 md:py-32">
           <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
-            <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+            <h2 className="text-3xl font-bold leading-[1.1] sm:text-3xl md:text-6xl">
               Features
             </h2>
             <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
               Everything you need to track and review concerts
             </p>
           </div>
-          <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3 lg:gap-8">
+          <div className="mx-auto mt-16 grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
             <div className="relative overflow-hidden rounded-lg border bg-background p-2">
               <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
                 <h3 className="font-bold text-primary">Track Concerts</h3>
@@ -124,16 +92,7 @@ export default async function Home() {
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
           <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
             <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-              Built with Next.js and Supabase. The source code is available on{" "}
-              <a
-                href="https://github.com/yourusername/soundcheckd"
-                target="_blank"
-                rel="noreferrer"
-                className="font-medium text-primary hover:underline"
-              >
-                GitHub
-              </a>
-              .
+              © 2024 SoundCheckd. All rights reserved.
             </p>
           </div>
         </div>
