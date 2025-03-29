@@ -9,7 +9,7 @@ export default function Home() {
         <div className="container flex h-14 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
             <span className="font-bold text-2xl bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
-              SoundCheckd
+              soundcheckd
             </span>
           </Link>
         </div>
@@ -26,7 +26,7 @@ export default function Home() {
                 </h1>
                 <p className="mt-6 text-lg text-muted-foreground">
                   Track concerts, share reviews, and connect with fellow music lovers. 
-                  Download the SoundCheckd app to take your concert experience to the next level.
+                  Download the soundcheckd app to take your concert experience to the next level.
                 </p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                   <a
@@ -92,7 +92,7 @@ export default function Home() {
         <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
           <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
             <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-              © 2024 SoundCheckd. All rights reserved.
+              © 2025 soundcheckd. All rights reserved.
             </p>
           </div>
         </div>
