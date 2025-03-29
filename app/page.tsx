@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/server";
+import { Apple } from "lucide-react";
 
 export default async function Home() {
   const supabase = createClient();
@@ -12,16 +13,16 @@ export default async function Home() {
         <div className="container flex h-14 items-center">
           <div className="mr-4 flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">
-              <span className="font-bold">SoundCheckd</span>
+              <span className="font-bold text-primary">SoundCheckd</span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link href="/concerts" className="transition-colors hover:text-foreground/80">
+              <Link href="/concerts" className="transition-colors hover:text-primary">
                 Concerts
               </Link>
-              <Link href="/reviews" className="transition-colors hover:text-foreground/80">
+              <Link href="/reviews" className="transition-colors hover:text-primary">
                 Reviews
               </Link>
-              <Link href="/artists" className="transition-colors hover:text-foreground/80">
+              <Link href="/artists" className="transition-colors hover:text-primary">
                 Artists
               </Link>
             </nav>
@@ -45,26 +46,44 @@ export default async function Home() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
-          <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
-            <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-              Track Concerts, Share Reviews,{" "}
-              <span className="text-primary">Connect with Music Lovers</span>
-            </h1>
-            <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-              SoundCheckd is your go-to platform for concert tracking, reviews, and connecting with fellow music enthusiasts.
-            </p>
-            <div className="space-x-4">
-              <Link href="/concerts">
-                <Button size="lg">Browse Concerts</Button>
-              </Link>
-              <Link href="/signup">
-                <Button variant="outline" size="lg">Get Started</Button>
-              </Link>
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-primary/20" />
+          <div className="container relative py-24 md:py-32">
+            <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+              <div className="flex flex-col justify-center">
+                <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+                  Your Concert Journey,{" "}
+                  <span className="text-primary">Elevated</span>
+                </h1>
+                <p className="mt-6 text-lg text-muted-foreground">
+                  Track concerts, share reviews, and connect with fellow music lovers. Download the SoundCheckd app to take your concert experience to the next level.
+                </p>
+                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                  <a
+                    href="https://apps.apple.com/app/soundcheckd/id123456789"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-lg bg-black px-6 py-3 text-white hover:bg-black/90"
+                  >
+                    <Apple className="mr-2 h-5 w-5" />
+                    Download on the App Store
+                  </a>
+                </div>
+              </div>
+              <div className="relative">
+                <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 p-8">
+                  <div className="h-full w-full rounded-xl bg-white/10 backdrop-blur-sm">
+                    {/* Placeholder for app screenshot */}
+                    <div className="flex h-full items-center justify-center text-muted-foreground">
+                      App Preview
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-        <section className="container space-y-6 py-8 md:py-12 lg:py-24">
+        <section className="container py-24 md:py-32">
           <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
             <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
               Features
@@ -76,7 +95,7 @@ export default async function Home() {
           <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3 lg:gap-8">
             <div className="relative overflow-hidden rounded-lg border bg-background p-2">
               <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-                <h3 className="font-bold">Track Concerts</h3>
+                <h3 className="font-bold text-primary">Track Concerts</h3>
                 <p className="text-sm text-muted-foreground">
                   Keep track of concerts you've attended and want to attend
                 </p>
@@ -84,7 +103,7 @@ export default async function Home() {
             </div>
             <div className="relative overflow-hidden rounded-lg border bg-background p-2">
               <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-                <h3 className="font-bold">Write Reviews</h3>
+                <h3 className="font-bold text-primary">Write Reviews</h3>
                 <p className="text-sm text-muted-foreground">
                   Share your concert experiences with the community
                 </p>
@@ -92,7 +111,7 @@ export default async function Home() {
             </div>
             <div className="relative overflow-hidden rounded-lg border bg-background p-2">
               <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-                <h3 className="font-bold">Rate Shows</h3>
+                <h3 className="font-bold text-primary">Rate Shows</h3>
                 <p className="text-sm text-muted-foreground">
                   Rate concerts and help others discover great shows
                 </p>
@@ -110,7 +129,7 @@ export default async function Home() {
                 href="https://github.com/yourusername/soundcheckd"
                 target="_blank"
                 rel="noreferrer"
-                className="font-medium underline underline-offset-4"
+                className="font-medium text-primary hover:underline"
               >
                 GitHub
               </a>
