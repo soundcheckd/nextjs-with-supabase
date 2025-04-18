@@ -1,13 +1,21 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Apple } from "lucide-react";
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-14 items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
+        <div className="container flex h-16 items-center justify-between">
+          <Link href="/" className="flex items-center space-x-3">
+            <Image
+              src="/images/soundcheckd-logo-light.jpg"
+              alt="Soundcheckd Logo"
+              width={40}
+              height={40}
+              className="rounded-md"
+            />
             <span className="font-bold text-2xl bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
               soundcheckd
             </span>
@@ -25,7 +33,7 @@ export default function Home() {
                   <span className="text-primary">Elevated</span>
                 </h1>
                 <p className="mt-6 text-lg text-muted-foreground">
-                  Track concerts, share reviews, and connect with fellow music lovers. 
+                  Track concerts, share reviews, and connect with fellow music lovers.
                   Download the soundcheckd app to take your concert experience to the next level.
                 </p>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
