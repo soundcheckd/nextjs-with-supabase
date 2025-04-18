@@ -35,14 +35,14 @@ export default function RootLayout({
             <div className="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
               <div className="flex items-center space-x-4 mb-4 sm:mb-0">
                 <Image
-                  src="/images/soundcheckd-logo.png"
+                  src="/images/soundcheckd-logo-light.jpg"
                   alt="Soundcheckd Logo"
                   width={30}
                   height={30}
                   className="h-auto"
                 />
                 <Image
-                  src="/images/Spotify_Full_Logo_RGB_Green.png"
+                  src="/images/spotify-logo.png"
                   alt="Spotify Logo"
                   width={80}
                   height={24}
