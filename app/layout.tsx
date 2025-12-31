@@ -50,8 +50,9 @@ export default function RootLayout({
                 />
               </div>
               <div className="flex space-x-4">
-                <Link href="/terms" className="hover:underline">Terms of Service</Link>
-                <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
+                <Link href="/support" className="hover:underline">Support</Link>
+                <Link href="/terms" className="hover:underline">Terms</Link>
+                <Link href="/privacy" className="hover:underline">Privacy</Link>
               </div>
             </div>
           </footer>
