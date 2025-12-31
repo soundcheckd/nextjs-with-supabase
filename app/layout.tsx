@@ -41,13 +41,7 @@ export default function RootLayout({
                   height={30}
                   className="h-auto"
                 />
-                <Image
-                  src="/images/spotify-logo.png"
-                  alt="Spotify Logo"
-                  width={80}
-                  height={24}
-                  className="h-auto"
-                />
+                <span className="font-semibold text-foreground">soundcheckd</span>
               </div>
               <div className="flex space-x-4">
                 <Link href="/support" className="hover:underline">Support</Link>

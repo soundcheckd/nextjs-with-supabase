@@ -57,12 +57,10 @@ export default function PrivacyPage() {
 
               <div>
                 <h3 className="text-lg font-medium text-foreground mb-2">Third-Party Information</h3>
-                <p className="mb-3">We may receive information from third-party services you connect:</p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li><strong>Spotify:</strong> If you connect your Spotify account, we may access your Spotify username, profile information, 
-                    listening history, and saved content to enhance your experience and suggest concerts based on your music preferences. 
-                    We only access data you authorize through Spotify's authentication process.</li>
-                </ul>
+                <p>
+                  We may receive information from third-party services you choose to connect with your account. 
+                  We only access data you explicitly authorize through authentication processes.
+                </p>
               </div>
             </div>
           </section>
@@ -78,7 +76,7 @@ export default function PrivacyPage() {
                 <li><strong>Analytics:</strong> To understand how users interact with our Service and improve user experience</li>
                 <li><strong>Security:</strong> To detect, prevent, and address fraud, abuse, and security issues</li>
                 <li><strong>Legal Compliance:</strong> To comply with legal obligations and enforce our terms</li>
-                <li><strong>Spotify Integration:</strong> To display your Spotify-connected features and provide music-based concert suggestions</li>
+                <li><strong>Third-Party Integrations:</strong> To display connected features and provide personalized concert suggestions</li>
               </ul>
             </div>
           </section>
@@ -97,7 +95,7 @@ export default function PrivacyPage() {
               </ul>
               <p className="mt-4 font-medium">
                 We do not sell your personal information to third parties. We do not share your personal SoundCheckd 
-                data with Spotify or other third parties for their marketing purposes.
+                data with third parties for their marketing purposes.
               </p>
             </div>
           </section>
@@ -162,18 +160,12 @@ export default function PrivacyPage() {
 
           <section className="bg-card rounded-xl p-8 shadow-sm border">
             <h2 className="text-2xl font-semibold mb-4 text-foreground">9. Third-Party Services</h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                Our Service may contain links to third-party websites or integrate with third-party services. 
-                We are not responsible for the privacy practices of these third parties. We encourage you to 
-                review the privacy policies of any third-party services you interact with.
-              </p>
-              <p>
-                <strong>Spotify Integration:</strong> When you connect your Spotify account, your use of Spotify 
-                is governed by Spotify's Terms of Use and Privacy Policy. You can disconnect your Spotify account 
-                at any time through your SoundCheckd account settings or within the Spotify app.
-              </p>
-            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              Our Service may contain links to third-party websites or integrate with third-party services. 
+              We are not responsible for the privacy practices of these third parties. We encourage you to 
+              review the privacy policies of any third-party services you interact with. You can disconnect 
+              any connected third-party services at any time through your SoundCheckd account settings.
+            </p>
           </section>
 
           <section className="bg-card rounded-xl p-8 shadow-sm border">

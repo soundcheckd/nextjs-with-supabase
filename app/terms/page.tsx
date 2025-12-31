@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 };
 
 export default function TermsPage() {
-  return (
+    return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         <header className="mb-12 text-center">
@@ -92,24 +92,17 @@ export default function TermsPage() {
                 <li>Collecting or harvesting any personally identifiable information from the Service</li>
                 <li>Using the Service for any commercial solicitation purposes without our prior written consent</li>
                 <li>Violating any applicable laws or regulations</li>
-              </ul>
+            </ul>
             </div>
           </section>
 
           <section className="bg-card rounded-xl p-8 shadow-sm border">
             <h2 className="text-2xl font-semibold mb-4 text-foreground">6. Third-Party Services</h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                Our Service may integrate with third-party services, including but not limited to Spotify. Your use of 
-                such third-party services is subject to their respective terms of service and privacy policies. We are 
-                not responsible for the content, privacy policies, or practices of any third-party services.
-              </p>
-              <p>
-                When you connect your Spotify account to SoundCheckd, you authorize us to access certain information 
-                from your Spotify account as described in our Privacy Policy. You may disconnect your Spotify account 
-                at any time through your account settings.
-              </p>
-            </div>
+            <p className="text-muted-foreground leading-relaxed">
+              Our Service may integrate with third-party services. Your use of such third-party services is subject 
+              to their respective terms of service and privacy policies. We are not responsible for the content, 
+              privacy policies, or practices of any third-party services.
+            </p>
           </section>
 
           <section className="bg-card rounded-xl p-8 shadow-sm border">
@@ -203,6 +196,6 @@ export default function TermsPage() {
           <p>© 2025 SoundCheckd. All rights reserved.</p>
         </footer>
       </div>
-    </div>
-  );
-}
+        </div>
+    );
+} 
