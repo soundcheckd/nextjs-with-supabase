@@ -1,14 +1,17 @@
 import { Metadata } from "next";
+import { Header } from "@/components/header";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | SoundCheckd",
-  description: "SoundCheckd Terms of Service - Read our terms and conditions for using our concert tracking platform.",
+  title: "Terms of Service | soundcheckd",
+  description: "soundcheckd Terms of Service - Read our terms and conditions for using our concert tracking platform.",
 };
 
 export default function TermsPage() {
-    return (
+  return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <Header />
+      
+      <div className="container mx-auto px-4 py-16 pt-24 max-w-4xl">
         <header className="mb-12 text-center">
           <h1 className="text-4xl font-bold tracking-tight mb-4 bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
             Terms of Service
@@ -22,7 +25,7 @@ export default function TermsPage() {
           <section className="bg-card rounded-xl p-8 shadow-sm border">
             <h2 className="text-2xl font-semibold mb-4 text-foreground">1. Agreement to Terms</h2>
             <p className="text-muted-foreground leading-relaxed">
-              By accessing or using SoundCheckd ("Service"), operated by SoundCheckd ("Company," "we," "us," or "our"), 
+              By accessing or using soundcheckd ("Service"), operated by soundcheckd ("Company," "we," "us," or "our"), 
               you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these Terms, 
               you may not access the Service. These Terms apply to all visitors, users, and others who access or use the Service.
             </p>
@@ -31,7 +34,7 @@ export default function TermsPage() {
           <section className="bg-card rounded-xl p-8 shadow-sm border">
             <h2 className="text-2xl font-semibold mb-4 text-foreground">2. Description of Service</h2>
             <p className="text-muted-foreground leading-relaxed">
-              SoundCheckd is a concert tracking and review platform that allows users to discover, track, rate, 
+              soundcheckd is a concert tracking and review platform that allows users to discover, track, rate, 
               and review live music events. Our Service includes mobile applications and web-based platforms that 
               enable users to log concerts they have attended, share reviews with the community, follow other users, 
               and discover new live music experiences.
@@ -92,7 +95,7 @@ export default function TermsPage() {
                 <li>Collecting or harvesting any personally identifiable information from the Service</li>
                 <li>Using the Service for any commercial solicitation purposes without our prior written consent</li>
                 <li>Violating any applicable laws or regulations</li>
-            </ul>
+              </ul>
             </div>
           </section>
 
@@ -109,7 +112,7 @@ export default function TermsPage() {
             <h2 className="text-2xl font-semibold mb-4 text-foreground">7. Intellectual Property</h2>
             <p className="text-muted-foreground leading-relaxed">
               The Service and its original content (excluding User Content), features, and functionality are and will 
-              remain the exclusive property of SoundCheckd and its licensors. The Service is protected by copyright, 
+              remain the exclusive property of soundcheckd and its licensors. The Service is protected by copyright, 
               trademark, and other laws. Our trademarks and trade dress may not be used in connection with any product 
               or service without our prior written consent.
             </p>
@@ -124,7 +127,7 @@ export default function TermsPage() {
                 FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR COURSE OF PERFORMANCE.
               </p>
               <p>
-                SoundCheckd does not warrant that the Service will function uninterrupted, secure, or available at 
+                soundcheckd does not warrant that the Service will function uninterrupted, secure, or available at 
                 any particular time or location, that any errors or defects will be corrected, or that the Service 
                 is free of viruses or other harmful components.
               </p>
@@ -144,7 +147,7 @@ export default function TermsPage() {
           <section className="bg-card rounded-xl p-8 shadow-sm border">
             <h2 className="text-2xl font-semibold mb-4 text-foreground">10. Indemnification</h2>
             <p className="text-muted-foreground leading-relaxed">
-              You agree to defend, indemnify, and hold harmless SoundCheckd and its officers, directors, employees, 
+              You agree to defend, indemnify, and hold harmless soundcheckd and its officers, directors, employees, 
               and agents from and against any claims, liabilities, damages, losses, and expenses, including without 
               limitation reasonable attorney's fees, arising out of or in any way connected with your access to or 
               use of the Service, your User Content, or your violation of these Terms.
@@ -185,17 +188,13 @@ export default function TermsPage() {
             <h2 className="text-2xl font-semibold mb-4 text-foreground">14. Contact Us</h2>
             <p className="text-muted-foreground leading-relaxed">
               If you have any questions about these Terms, please contact us at{" "}
-              <a href="mailto:cole.first@soundcheckd.co" className="text-primary hover:underline font-medium">
-                cole.first@soundcheckd.co
+              <a href="mailto:support@soundcheckd.co" className="text-primary hover:underline font-medium">
+                support@soundcheckd.co
               </a>
             </p>
           </section>
         </div>
-
-        <footer className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>© 2025 SoundCheckd. All rights reserved.</p>
-        </footer>
       </div>
-        </div>
-    );
-} 
+    </div>
+  );
+}

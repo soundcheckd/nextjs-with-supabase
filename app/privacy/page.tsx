@@ -1,14 +1,17 @@
 import { Metadata } from "next";
+import { Header } from "@/components/header";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | SoundCheckd",
-  description: "SoundCheckd Privacy Policy - Learn how we collect, use, and protect your personal information.",
+  title: "Privacy Policy | soundcheckd",
+  description: "soundcheckd Privacy Policy - Learn how we collect, use, and protect your personal information.",
 };
 
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <Header />
+      
+      <div className="container mx-auto px-4 py-16 pt-24 max-w-4xl">
         <header className="mb-12 text-center">
           <h1 className="text-4xl font-bold tracking-tight mb-4 bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
             Privacy Policy
@@ -22,7 +25,7 @@ export default function PrivacyPage() {
           <section className="bg-card rounded-xl p-8 shadow-sm border">
             <h2 className="text-2xl font-semibold mb-4 text-foreground">1. Introduction</h2>
             <p className="text-muted-foreground leading-relaxed">
-              SoundCheckd ("Company," "we," "us," or "our") respects your privacy and is committed to protecting 
+              soundcheckd ("Company," "we," "us," or "our") respects your privacy and is committed to protecting 
               your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your 
               information when you use our mobile application and website (collectively, the "Service"). Please 
               read this Privacy Policy carefully. By using the Service, you consent to the data practices described 
@@ -89,12 +92,12 @@ export default function PrivacyPage() {
                 <li><strong>Public Content:</strong> Your reviews, ratings, and profile information may be visible to other users as part of the Service</li>
                 <li><strong>Service Providers:</strong> With trusted third-party vendors who assist in operating our Service (hosting, analytics, customer support)</li>
                 <li><strong>Legal Requirements:</strong> When required by law, court order, or government request</li>
-                <li><strong>Safety:</strong> To protect the rights, property, or safety of SoundCheckd, our users, or the public</li>
+                <li><strong>Safety:</strong> To protect the rights, property, or safety of soundcheckd, our users, or the public</li>
                 <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets</li>
                 <li><strong>With Your Consent:</strong> When you explicitly authorize us to share your information</li>
               </ul>
               <p className="mt-4 font-medium">
-                We do not sell your personal information to third parties. We do not share your personal SoundCheckd 
+                We do not sell your personal information to third parties. We do not share your personal soundcheckd 
                 data with third parties for their marketing purposes.
               </p>
             </div>
@@ -151,8 +154,8 @@ export default function PrivacyPage() {
               </ul>
               <p>
                 To exercise these rights, please contact us at{" "}
-                <a href="mailto:cole.first@soundcheckd.co" className="text-primary hover:underline font-medium">
-                  cole.first@soundcheckd.co
+                <a href="mailto:support@soundcheckd.co" className="text-primary hover:underline font-medium">
+                  support@soundcheckd.co
                 </a>. We will respond to your request within 30 days.
               </p>
             </div>
@@ -164,7 +167,7 @@ export default function PrivacyPage() {
               Our Service may contain links to third-party websites or integrate with third-party services. 
               We are not responsible for the privacy practices of these third parties. We encourage you to 
               review the privacy policies of any third-party services you interact with. You can disconnect 
-              any connected third-party services at any time through your SoundCheckd account settings.
+              any connected third-party services at any time through your soundcheckd account settings.
             </p>
           </section>
 
@@ -223,21 +226,17 @@ export default function PrivacyPage() {
                 If you have any questions about this Privacy Policy or our data practices, please contact us:
               </p>
               <div className="bg-muted/50 rounded-lg p-4">
-                <p className="font-medium text-foreground">SoundCheckd</p>
+                <p className="font-medium text-foreground">soundcheckd</p>
                 <p>
                   Email:{" "}
-                  <a href="mailto:cole.first@soundcheckd.co" className="text-primary hover:underline font-medium">
-                    cole.first@soundcheckd.co
+                  <a href="mailto:support@soundcheckd.co" className="text-primary hover:underline font-medium">
+                    support@soundcheckd.co
                   </a>
                 </p>
               </div>
             </div>
           </section>
         </div>
-
-        <footer className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>© 2025 SoundCheckd. All rights reserved.</p>
-        </footer>
       </div>
     </div>
   );

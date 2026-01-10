@@ -8,8 +8,8 @@ import { redirect } from "next/navigation";
 export const signUpAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
   const password = formData.get("password")?.toString();
+  const confirmPassword = formData.get("confirmPassword")?.toString();
   const supabase = await createClient();
-  const origin = (await headers()).get("origin");
 
   if (!email || !password) {
     return encodedRedirect(
@@ -19,24 +19,46 @@ export const signUpAction = async (formData: FormData) => {
     );
   }
 
-  const { error } = await supabase.auth.signUp({
+  if (password !== confirmPassword) {
+    return encodedRedirect(
+      "error",
+      "/sign-up",
+      "Passwords do not match",
+    );
+  }
+
+  if (password.length < 6) {
+    return encodedRedirect(
+      "error",
+      "/sign-up",
+      "Password must be at least 6 characters",
+    );
+  }
+
+  // Sign up without email verification
+  const { data, error } = await supabase.auth.signUp({
     email,
     password,
     options: {
-      emailRedirectTo: `${origin}/auth/callback`,
+      // Don't send email verification - user is signed in immediately
+      emailRedirectTo: undefined,
     },
   });
 
   if (error) {
     console.error(error.code + " " + error.message);
     return encodedRedirect("error", "/sign-up", error.message);
-  } else {
-    return encodedRedirect(
-      "success",
-      "/sign-up",
-      "Thanks for signing up! Please check your email for a verification link.",
-    );
   }
+
+  // If sign up successful and user is confirmed (email verification disabled in Supabase)
+  // Redirect to profile page
+  if (data.user && data.session) {
+    return redirect("/protected/my-profile");
+  }
+
+  // If email verification is still enabled in Supabase settings,
+  // the user won't have a session yet - redirect to sign in
+  return redirect("/sign-in?message=Account created! Please sign in.");
 };
 
 export const signInAction = async (formData: FormData) => {
@@ -53,7 +75,7 @@ export const signInAction = async (formData: FormData) => {
     return encodedRedirect("error", "/sign-in", error.message);
   }
 
-  return redirect("/protected");
+  return redirect("/protected/my-profile");
 };
 
 export const forgotPasswordAction = async (formData: FormData) => {
@@ -130,5 +152,5 @@ export const resetPasswordAction = async (formData: FormData) => {
 export const signOutAction = async () => {
   const supabase = await createClient();
   await supabase.auth.signOut();
-  return redirect("/sign-in");
+  return redirect("/");
 };

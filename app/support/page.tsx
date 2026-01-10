@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Mail, MessageCircle, Clock, HelpCircle, FileText, Shield } from "lucide-react";
 import Link from "next/link";
+import { Header } from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Support | soundcheckd",
@@ -10,7 +11,9 @@ export const metadata: Metadata = {
 export default function SupportPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-      <div className="container mx-auto px-4 py-16 max-w-4xl">
+      <Header />
+      
+      <div className="container mx-auto px-4 py-16 pt-24 max-w-4xl">
         <header className="mb-12 text-center">
           <h1 className="text-4xl font-bold tracking-tight mb-4 bg-gradient-to-r from-primary to-blue-500 bg-clip-text text-transparent">
             Support Center
@@ -173,12 +176,7 @@ export default function SupportPage() {
             </p>
           </div>
         </section>
-
-        <footer className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>© 2025 SoundCheckd. All rights reserved.</p>
-        </footer>
       </div>
     </div>
   );
 }
-
