@@ -3,8 +3,8 @@ import { Mail, MessageCircle, Clock, HelpCircle, FileText, Shield } from "lucide
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Support | SoundCheckd",
-  description: "Get help with SoundCheckd - Contact our support team for assistance with your concert tracking experience.",
+  title: "Support | soundcheckd",
+  description: "Get help with soundcheckd - Contact our support team for assistance with your concert tracking experience.",
 };
 
 export default function SupportPage() {
@@ -16,7 +16,7 @@ export default function SupportPage() {
             Support Center
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We're here to help you get the most out of SoundCheckd. 
+            We're here to help you get the most out of soundcheckd. 
             Reach out to our team with any questions, feedback, or issues.
           </p>
         </header>
@@ -36,11 +36,11 @@ export default function SupportPage() {
                   Have a question or need assistance? Send us an email and we'll get back to you as soon as possible.
                 </p>
                 <a 
-                  href="mailto:cole.first@soundcheckd.co"
+                  href="mailto:support@soundcheckd.co"
                   className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
                 >
                   <Mail className="w-5 h-5" />
-                  cole.first@soundcheckd.co
+                  support@soundcheckd.co
                 </a>
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function SupportPage() {
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">General Questions</h3>
                   <p className="text-muted-foreground text-sm">
-                    Questions about using SoundCheckd, features, or how to get started
+                    Questions about using soundcheckd, features, or how to get started
                   </p>
                 </div>
               </div>
